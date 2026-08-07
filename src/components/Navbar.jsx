@@ -5,9 +5,11 @@ function Navbar({ currentRoute, navigateTo }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { label: 'Work', route: 'work' },
     { label: 'Services', route: 'services' },
-    { label: 'Stack', route: 'stack' },
+    { label: 'Trusted By', route: 'trusted-by' },
+    { label: 'Work', route: 'work' },
+    { label: 'Tech Stack', route: 'stack' },
+    { label: 'FAQs', route: 'faq' },
     { label: 'About', route: 'about' },
     { label: 'Contact', route: 'contact' }
   ];
@@ -20,14 +22,13 @@ function Navbar({ currentRoute, navigateTo }) {
   return (
     <header className="w-full top-0 sticky z-50 border-b-4 border-on-background bg-background">
       <div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-md max-w-[1440px] mx-auto">
-        <button 
-          onClick={() => handleNav('home')} 
+        <button
+          onClick={() => handleNav('home')}
           className="font-display-lg text-headline-md font-black text-on-background uppercase tracking-tighter hover:scale-105 transition-transform cursor-pointer bg-transparent border-none p-0"
         >
           3xcreative
         </button>
 
-        {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-lg">
           {navItems.map((item) => {
             const isActive = currentRoute === item.route;
@@ -36,7 +37,7 @@ function Navbar({ currentRoute, navigateTo }) {
                 key={item.route}
                 onClick={() => handleNav(item.route)}
                 className={`font-label-bold text-label-bold uppercase transition-colors cursor-pointer bg-transparent border-none p-0 ${
-                  isActive 
+                  isActive
                     ? 'text-primary border-b-4 border-primary pb-1'
                     : 'text-on-background hover:text-primary hover:underline decoration-4'
                 }`}
@@ -47,23 +48,21 @@ function Navbar({ currentRoute, navigateTo }) {
           })}
         </nav>
 
-        <button 
-          onClick={() => handleNav('contact')} 
+        <button
+          onClick={() => handleNav('contact')}
           className="font-label-bold text-label-bold uppercase bg-primary-container text-on-background brutal-border brutal-shadow px-lg py-sm hidden md:block active:translate-x-[2px] active:translate-y-[2px] active:shadow-[6px_6px_0px_0px_#1a1c1c] transition-all cursor-pointer"
         >
           Hire Us
         </button>
 
-        {/* Mobile Menu Toggle */}
-        <button 
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)} 
+        <button
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           className="md:hidden text-on-background brutal-border-sm p-1 bg-primary-container brutal-shadow-sm active:translate-x-[1px] active:translate-y-[1px] active:shadow-[3px_3px_0px_0px_#1a1c1c] transition-all cursor-pointer"
         >
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      {/* Mobile Menu Drawer */}
       {mobileMenuOpen && (
         <div className="md:hidden border-b-4 border-on-background bg-background w-full flex flex-col items-stretch p-lg gap-md absolute left-0 top-[calc(100%)] brutal-shadow z-40">
           {navItems.map((item) => {
@@ -80,8 +79,8 @@ function Navbar({ currentRoute, navigateTo }) {
               </button>
             );
           })}
-          <button 
-            onClick={() => handleNav('contact')} 
+          <button
+            onClick={() => handleNav('contact')}
             className="w-full bg-primary-container text-on-background font-headline-md text-headline-md uppercase py-md brutal-border brutal-shadow active:translate-x-[2px] active:translate-y-[2px] active:shadow-[6px_6px_0px_0px_#1a1c1c] transition-all cursor-pointer"
           >
             Hire Us
