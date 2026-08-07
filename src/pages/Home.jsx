@@ -1,5 +1,13 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import {
+  MonitorSmartphone,
+  Smartphone,
+  ShoppingCart,
+  Search,
+  Server,
+  Wrench
+} from 'lucide-react';
 import WorkPage from './Work';
 import AboutPage from './About';
 import ContactPage from './Contact';
@@ -10,22 +18,40 @@ function Home({ navigateTo }) {
 
   const services = [
     {
-      title: 'Web Apps',
-      icon: 'web',
-      description: 'React, Vue, and vanilla JS experiences optimized for sub-second load times. Zero unnecessary dependencies.',
-      tags: ['React', 'Next.js']
+      title: 'Web Designing',
+      icon: MonitorSmartphone,
+      description: 'Modern, responsive and conversion-focused websites designed to reflect your brand and engage your audience.',
+      tags: ['UI/UX', 'Figma']
     },
     {
-      title: 'Mobile Apps',
-      icon: 'smartphone',
-      description: 'Native and cross-platform applications that feel instantly responsive. We don\'t compromise on frame rates.',
-      tags: ['React Native', 'Swift']
+      title: 'Responsive Design',
+      icon: Smartphone,
+      description: 'Mobile-first layouts that adapt perfectly across desktops, tablets and smartphones for the best user experience.',
+      tags: ['Mobile First', 'Responsive']
     },
     {
-      title: 'Infrastructure',
-      icon: 'dns',
-      description: 'Cloud deployments, CI/CD pipelines, and database architecture built to scale infinitely without breaking a sweat.',
-      tags: ['AWS', 'Docker']
+      title: 'E-Commerce Websites',
+      icon: ShoppingCart,
+      description: 'Scalable online stores with secure payments, intuitive shopping experiences and complete store management.',
+      tags: ['Shopify', 'WooCommerce']
+    },
+    {
+      title: 'SEO Services',
+      icon: Search,
+      description: 'Improve search rankings, website performance and organic traffic using modern SEO best practices.',
+      tags: ['SEO', 'Analytics']
+    },
+    {
+      title: 'Web Hosting',
+      icon: Server,
+      description: 'Fast, secure and reliable cloud hosting with SSL, backups and continuous uptime monitoring.',
+      tags: ['Hosting', 'SSL']
+    },
+    {
+      title: 'Website Maintenance',
+      icon: Wrench,
+      description: 'Keep your website updated, secure and running smoothly with regular maintenance and technical support.',
+      tags: ['Support', 'Updates']
     }
   ];
 
@@ -58,7 +84,7 @@ function Home({ navigateTo }) {
         className="bg-primary-container brutal-border-sm border-b-4 w-full relative overflow-hidden"
       >
         <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: "linear-gradient(#1a1c1c 2px, transparent 2px), linear-gradient(90deg, #1a1c1c 2px, transparent 2px)", backgroundSize: "64px 64px" }}></div>
-        <div className="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop py-xl md:py-[120px] relative z-10 grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+        <div className="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop py-xl md:py-[120px] min-h-[calc(100vh-80px)] relative z-10 grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
           <div className="md:col-span-8 flex flex-col gap-lg items-start">
             <h1 className="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-on-background uppercase m-0 p-0">
               WE BUILD FAST.
@@ -106,28 +132,29 @@ function Home({ navigateTo }) {
           <div className="h-1 flex-grow bg-on-background ml-4"></div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-          {services.map((svc, i) => (
-            <div key={i} className="bg-surface-container-lowest brutal-border brutal-shadow flex flex-col p-0 group hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform duration-150">
-              <div className="p-md border-b-4 border-on-background bg-primary-container group-hover:bg-on-background transition-colors flex items-center justify-start">
-                <span className="material-symbols-outlined text-headline-md group-hover:text-primary-container">
-                  {svc.icon}
-                </span>
-              </div>
-              <div className="p-lg flex flex-col gap-sm flex-grow">
-                <h3 className="font-headline-md text-headline-md text-on-background uppercase">{svc.title}</h3>
-                <p className="font-body-md text-body-md text-on-surface-variant mb-md">
-                  {svc.description}
-                </p>
-                <div className="mt-auto flex flex-wrap gap-xs">
-                  {svc.tags.map((tag) => (
-                    <span key={tag} className="bg-on-background text-surface-container-lowest font-code text-code px-2 py-1 rounded-none">
-                      {tag}
-                    </span>
-                  ))}
+          {services.map((svc, i) => {
+            const Icon = svc.icon;
+            return (
+              <div key={i} className="bg-surface-container-lowest brutal-border brutal-shadow flex flex-col p-0 group hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform duration-150">
+                <div className="p-md border-b-4 border-on-background bg-primary-container group-hover:bg-on-background transition-colors flex items-center justify-start">
+                  <Icon size={32} className="text-on-background group-hover:text-primary-container" />
+                </div>
+                <div className="p-lg flex flex-col gap-sm flex-grow">
+                  <h3 className="font-headline-md text-headline-md text-on-background uppercase">{svc.title}</h3>
+                  <p className="font-body-md text-body-md text-on-surface-variant mb-md">
+                    {svc.description}
+                  </p>
+                  <div className="mt-auto flex flex-wrap gap-xs">
+                    {svc.tags.map((tag) => (
+                      <span key={tag} className="bg-on-background text-surface-container-lowest font-code text-code px-2 py-1 rounded-none">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </motion.section>
 
@@ -154,9 +181,9 @@ function Home({ navigateTo }) {
         <WorkPage navigateTo={navigateTo} />
       </motion.section>
 
-      <motion.section id="stack" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.15 }}>
+      {/* <motion.section id="stack" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.15 }}>
         <StackPage setActivePage={navigateTo} />
-      </motion.section>
+      </motion.section> */}
 
       <motion.section id="about" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.15 }}>
         <AboutPage />

@@ -3,9 +3,18 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 0px;
+  }
+
   body {
     background-color: #f9f9f9;
     color: #1a1c1c;
+  }
+
+  section[id] {
+    scroll-margin-top: 80px;
   }
 }
 

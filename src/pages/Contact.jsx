@@ -55,10 +55,10 @@ function Contact() {
               className="font-headline-md text-headline-md text-on-background hover:bg-primary-fixed transition-colors underline decoration-4 break-all" 
               href="mailto:hello@brutalist.dev"
             >
-              hello@brutalist.dev
+              3xcreative1008@gmail.com
             </a>
           </div>
-          <div className="bg-on-background p-lg brutal-border shadow-brutal transform rotate-1 hover:rotate-0 transition-transform duration-150">
+          {/* <div className="bg-on-background p-lg brutal-border shadow-brutal transform rotate-1 hover:rotate-0 transition-transform duration-150">
             <h3 className="font-label-bold text-label-bold uppercase text-surface-variant mb-xs">Discord</h3>
             <a 
               className="font-headline-md text-headline-md text-primary-fixed hover:text-surface-container-low transition-colors underline decoration-4 break-all" 
@@ -66,7 +66,7 @@ function Contact() {
             >
               brutalist_dev#0001
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
 

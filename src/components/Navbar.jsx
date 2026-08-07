@@ -6,10 +6,8 @@ function Navbar({ currentRoute, navigateTo }) {
 
   const navItems = [
     { label: 'Services', route: 'services' },
-    { label: 'Trusted By', route: 'trusted-by' },
     { label: 'Work', route: 'work' },
-    { label: 'Tech Stack', route: 'stack' },
-    { label: 'FAQs', route: 'faq' },
+    // { label: 'Tech Stack', route: 'stack' },
     { label: 'About', route: 'about' },
     { label: 'Contact', route: 'contact' }
   ];
