@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
+import { ThemeProvider } from './context/ThemeContext';
 
 function App() {
   const [activeSection, setActiveSection] = useState('hero');
@@ -58,13 +59,15 @@ function App() {
   };
 
   return (
-    <div className="bg-background min-h-screen flex flex-col font-body-md text-body-md antialiased selection:bg-primary-fixed selection:text-on-background">
-      <Navbar currentRoute={activeSection} navigateTo={navigateTo} />
-      <main className="flex-grow">
-        <Home navigateTo={navigateTo} />
-      </main>
-      <Footer currentRoute={activeSection} navigateTo={navigateTo} />
-    </div>
+    <ThemeProvider>
+      <div className="bg-background min-h-screen flex flex-col font-body-md text-body-md antialiased selection:bg-primary-fixed selection:text-on-background">
+        <Navbar currentRoute={activeSection} navigateTo={navigateTo} />
+        <main className="flex-grow">
+          <Home navigateTo={navigateTo} />
+        </main>
+        <Footer currentRoute={activeSection} navigateTo={navigateTo} />
+      </div>
+    </ThemeProvider>
   );
 }
 

@@ -83,7 +83,7 @@ function Home({ navigateTo }) {
         transition={{ duration: 0.4 }}
         className="bg-primary-container brutal-border-sm border-b-4 w-full relative overflow-hidden"
       >
-        <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: "linear-gradient(#1a1c1c 2px, transparent 2px), linear-gradient(90deg, #1a1c1c 2px, transparent 2px)", backgroundSize: "64px 64px" }}></div>
+        <div className="absolute inset-0 opacity-10 pointer-events-none hero-grid"></div>
         <div className="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop py-xl md:py-[120px] min-h-[calc(100vh-80px)] relative z-10 grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
           <div className="md:col-span-8 flex flex-col gap-lg items-start">
             <h1 className="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-on-background uppercase m-0 p-0">
@@ -136,8 +136,8 @@ function Home({ navigateTo }) {
             const Icon = svc.icon;
             return (
               <div key={i} className="bg-surface-container-lowest brutal-border brutal-shadow flex flex-col p-0 group hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform duration-150">
-                <div className="p-md border-b-4 border-on-background bg-primary-container group-hover:bg-on-background transition-colors flex items-center justify-start">
-                  <Icon size={32} className="text-on-background group-hover:text-primary-container" />
+                <div className="p-md border-b-4 border-on-background bg-primary-container group-hover:bg-primary-container transition-colors flex items-center justify-start">
+                  <Icon size={32} className="text-on-primary-container group-hover:text-on-primary-container" />
                 </div>
                 <div className="p-lg flex flex-col gap-sm flex-grow">
                   <h3 className="font-headline-md text-headline-md text-on-background uppercase">{svc.title}</h3>

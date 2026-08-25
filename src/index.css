@@ -2,70 +2,326 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ================================================================
+   THEME CSS VARIABLES — one block per theme, set on <html>
+   ================================================================ */
+
+:root,
+[data-theme="original"] {
+  --color-background:        #f9f9f9;
+  --color-surface:           #f9f9f9;
+  --color-surface-lowest:    #ffffff;
+  --color-surface-low:       #f4f3f3;
+  --color-surface-container: #eeeeee;
+  --color-surface-high:      #e8e8e8;
+  --color-surface-highest:   #e2e2e2;
+  --color-surface-bright:    #f9f9f9;
+  --color-surface-variant:   #e2e2e2;
+  --color-surface-tint:      #6a5f00;
+  --color-text:              #1a1c1c;
+  --color-text-variant:      #4b4731;
+  --color-text-secondary:    #5e5e5e;
+  --color-primary:           #6a5f00;
+  --color-primary-container: #ffe600;
+  --color-primary-fixed:     #fde400;
+  --color-primary-fixed-dim: #dec800;
+  --color-on-primary:        #1a1c1c;
+  --color-on-primary-container: #726600;
+  --color-secondary:         #5e5e5e;
+  --color-border:            #1a1c1c;
+  --color-shadow:            #1a1c1c;
+  --color-grid:              #1a1c1c;
+}
+
+[data-theme="light"] {
+  --color-background:        #f0f4ff;
+  --color-surface:           #f8faff;
+  --color-surface-lowest:    #ffffff;
+  --color-surface-low:       #eef2ff;
+  --color-surface-container: #e0e8ff;
+  --color-surface-high:      #d5e0ff;
+  --color-surface-highest:   #c8d8ff;
+  --color-surface-bright:    #f8faff;
+  --color-surface-variant:   #c7d8ff;
+  --color-surface-tint:      #1d4ed8;
+  --color-text:              #0f172a;
+  --color-text-variant:      #334155;
+  --color-text-secondary:    #475569;
+  --color-primary:           #1d4ed8;
+  --color-primary-container: #2563eb;
+  --color-primary-fixed:     #3b82f6;
+  --color-primary-fixed-dim: #1d4ed8;
+  --color-on-primary:        #ffffff;
+  --color-on-primary-container: #1e3a8a;
+  --color-secondary:         #475569;
+  --color-border:            #0f172a;
+  --color-shadow:            #0f172a;
+  --color-grid:              #0f172a;
+}
+
+[data-theme="aqua"] {
+  --color-background:        #ecfeff;
+  --color-surface:           #f0fffe;
+  --color-surface-lowest:    #ffffff;
+  --color-surface-low:       #e0f7f8;
+  --color-surface-container: #cef2f4;
+  --color-surface-high:      #bdebed;
+  --color-surface-highest:   #ace4e7;
+  --color-surface-bright:    #f0fffe;
+  --color-surface-variant:   #a5f3fc;
+  --color-surface-tint:      #0891b2;
+  --color-text:              #0c2a2a;
+  --color-text-variant:      #164444;
+  --color-text-secondary:    #285555;
+  --color-primary:           #0e7490;
+  --color-primary-container: #0891b2;
+  --color-primary-fixed:     #06b6d4;
+  --color-primary-fixed-dim: #0e7490;
+  --color-on-primary:        #ffffff;
+  --color-on-primary-container: #164e63;
+  --color-secondary:         #285555;
+  --color-border:            #0c2a2a;
+  --color-shadow:            #0c2a2a;
+  --color-grid:              #0c2a2a;
+}
+
+[data-theme="fire"] {
+  --color-background:        #fff7f5;
+  --color-surface:           #fff9f8;
+  --color-surface-lowest:    #ffffff;
+  --color-surface-low:       #ffeeea;
+  --color-surface-container: #ffe4de;
+  --color-surface-high:      #ffd9d1;
+  --color-surface-highest:   #ffcec4;
+  --color-surface-bright:    #fff9f8;
+  --color-surface-variant:   #fecaca;
+  --color-surface-tint:      #dc2626;
+  --color-text:              #1a0505;
+  --color-text-variant:      #4a1010;
+  --color-text-secondary:    #6b2020;
+  --color-primary:           #b91c1c;
+  --color-primary-container: #dc2626;
+  --color-primary-fixed:     #ef4444;
+  --color-primary-fixed-dim: #b91c1c;
+  --color-on-primary:        #ffffff;
+  --color-on-primary-container: #7f1d1d;
+  --color-secondary:         #6b2020;
+  --color-border:            #1a0505;
+  --color-shadow:            #1a0505;
+  --color-grid:              #1a0505;
+}
+
+[data-theme="cyber"] {
+  --color-background:        #050505;
+  --color-surface:           #111111;
+  --color-surface-lowest:    #050505;
+  --color-surface-low:       #0a0a0a;
+  --color-surface-container: #0f0f0f;
+  --color-surface-high:      #141414;
+  --color-surface-highest:   #191919;
+  --color-surface-bright:    #111111;
+  --color-surface-variant:   #606060;
+  --color-surface-tint:      #00ffff;
+  --color-text:              #ffffff;
+  --color-text-variant:      #a0a0a0;
+  --color-text-secondary:    #7c3aed;
+  --color-primary:           #00ffff;
+  --color-primary-container: #003333;
+  --color-primary-fixed:     #00ffff;
+  --color-primary-fixed-dim: #00d4d4;
+  --color-on-primary:        #050505;
+  --color-on-primary-container: #00ffff;
+  --color-secondary:         #7c3aed;
+  --color-border:            #00ffff;
+  --color-shadow:            #00ffff;
+  --color-grid:              #00ffff;
+}
+
+[data-theme="nature"] {
+  --color-background:        #f0fdf4;
+  --color-surface:           #f5fff7;
+  --color-surface-lowest:    #ffffff;
+  --color-surface-low:       #e8fbed;
+  --color-surface-container: #d8f7de;
+  --color-surface-high:      #c8f2cf;
+  --color-surface-highest:   #b8ecc0;
+  --color-surface-bright:    #f5fff7;
+  --color-surface-variant:   #a7f3d0;
+  --color-surface-tint:      #15803d;
+  --color-text:              #0a1f0a;
+  --color-text-variant:      #14401a;
+  --color-text-secondary:    #1e5e26;
+  --color-primary:           #15803d;
+  --color-primary-container: #16a34a;
+  --color-primary-fixed:     #22c55e;
+  --color-primary-fixed-dim: #15803d;
+  --color-on-primary:        #ffffff;
+  --color-on-primary-container: #052e16;
+  --color-secondary:         #1e5e26;
+  --color-border:            #0a1f0a;
+  --color-shadow:            #0a1f0a;
+  --color-grid:              #0a1f0a;
+}
+
+/* ================================================================
+   BASE STYLES
+   ================================================================ */
+
 @layer base {
-  html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 0px;
-  }
-
-  body {
-    background-color: #f9f9f9;
-    color: #1a1c1c;
-  }
-
-  section[id] {
-    scroll-margin-top: 80px;
+  html { scroll-behavior: smooth; scroll-padding-top: 0px; }
+  body { background-color: var(--color-background); color: var(--color-text); }
+  section[id] { scroll-margin-top: 80px; }
+  ::selection {
+    background-color: var(--color-primary-fixed);
+    color: var(--color-text);
   }
 }
 
-/* Brutalist utilities */
+/* ================================================================
+   TAILWIND COLOR OVERRIDES
+   Placed after @tailwind utilities so they win the cascade.
+   Specificity is equal (1 class) but these declarations come later.
+   ================================================================ */
+
+/* Backgrounds */
+.bg-background               { background-color: var(--color-background); }
+.bg-surface                  { background-color: var(--color-surface); }
+.bg-surface-container-lowest { background-color: var(--color-surface-lowest); }
+.bg-surface-container-low    { background-color: var(--color-surface-low); }
+.bg-surface-container        { background-color: var(--color-surface-container); }
+.bg-surface-container-high   { background-color: var(--color-surface-high); }
+.bg-surface-container-highest{ background-color: var(--color-surface-highest); }
+.bg-surface-bright           { background-color: var(--color-surface-bright); }
+.bg-surface-variant          { background-color: var(--color-surface-variant); }
+.bg-primary-container        { background-color: var(--color-primary-container); }
+.bg-primary-fixed            { background-color: var(--color-primary-fixed); }
+.bg-primary                  { background-color: var(--color-primary); }
+.bg-on-background            { background-color: var(--color-text); }
+.bg-on-surface               { background-color: var(--color-text); }
+
+/* Hover backgrounds */
+.hover\:bg-surface-variant:hover   { background-color: var(--color-surface-variant); }
+.hover\:bg-surface-container:hover { background-color: var(--color-surface-container); }
+.hover\:bg-primary-fixed:hover     { background-color: var(--color-primary-fixed); }
+.hover\:bg-on-background:hover     { background-color: var(--color-text); }
+
+/* Group hover backgrounds */
+.group:hover .group-hover\:bg-on-background { background-color: var(--color-text); }
+
+/* Text */
+.text-on-background            { color: var(--color-text); }
+.text-on-surface               { color: var(--color-text); }
+.text-primary                  { color: var(--color-primary); }
+.text-primary-container        { color: var(--color-primary-container); }
+.text-primary-fixed            { color: var(--color-primary-fixed); }
+.text-on-surface-variant       { color: var(--color-text-variant); }
+.text-secondary                { color: var(--color-secondary); }
+.text-tertiary                 { color: var(--color-secondary); }
+.text-surface-variant          { color: var(--color-surface-variant); }
+.text-surface-bright           { color: var(--color-surface-bright); }
+.text-surface-tint             { color: var(--color-surface-tint); }
+.text-surface-container-lowest { color: var(--color-surface-lowest); }
+.text-on-primary               { color: var(--color-on-primary); }
+.text-on-primary-container     { color: var(--color-on-primary-container); }
+.text-inverse-on-surface       { color: var(--color-surface-bright); }
+
+/* Hover text */
+.hover\:text-primary:hover       { color: var(--color-primary); }
+.hover\:text-primary-fixed:hover { color: var(--color-primary-fixed); }
+.hover\:text-on-background:hover { color: var(--color-text); }
+
+/* Group hover text */
+.group:hover .group-hover\:text-primary-container { color: var(--color-primary-container); }
+
+/* Borders */
+.border-on-background { border-color: var(--color-text); }
+.border-primary       { border-color: var(--color-primary); }
+.border-primary-fixed { border-color: var(--color-primary-fixed); }
+.border-l-primary     { border-left-color: var(--color-primary); }
+.border-b-primary     { border-bottom-color: var(--color-primary); }
+.border-on-surface    { border-color: var(--color-text); }
+
+/* ================================================================
+   CYBER DARK THEME — TARGETED CORRECTIONS
+   Cyber is the only dark-background theme. Several "inverted" 
+   patterns (bg-on-background used as dark bg in light themes) 
+   break when --color-text = #ffffff.
+   ================================================================ */
+
+/* Force all bg-on-background elements to true black in Cyber */
+[data-theme="cyber"] .bg-on-background,
+[data-theme="cyber"] .hover\:bg-on-background:hover { background-color: #000000; }
+
+/* Allow service card icon header hover to keep light bg */
+[data-theme="cyber"] .group:hover .group-hover\:bg-on-background { background-color: #1a1a1a; }
+
+/* Icon inside hovered service card: show as cyan (readable on dark bg) */
+[data-theme="cyber"] .group:hover .group-hover\:text-primary-container { color: var(--color-primary); }
+
+/* "Light text on dark inverted backgrounds" pattern */
+[data-theme="cyber"] .text-surface-bright        { color: #c0c0c0; }
+[data-theme="cyber"] .text-surface-container-lowest { color: #e0e0e0; }
+
+/* Footer link muted text on black bg */
+[data-theme="cyber"] .text-surface-variant       { color: #707070; }
+
+/* ================================================================
+   HARDCODED ARBITRARY TAILWIND SHADOW OVERRIDES
+   These class names match what Tailwind JIT generates for
+   arbitrary shadow values used in components. By redefining them
+   after @tailwind utilities with CSS variables, we override the
+   hardcoded #1a1c1c color for all themes.
+   ================================================================ */
+
+.hover\:shadow-\[10px_10px_0px_0px_\#1a1c1c\]:hover  { box-shadow: 10px 10px 0px 0px var(--color-shadow); }
+.hover\:shadow-\[12px_12px_0px_0px_\#1a1c1c\]:hover  { box-shadow: 12px 12px 0px 0px var(--color-shadow); }
+.active\:shadow-\[6px_6px_0px_0px_\#1a1c1c\]:active  { box-shadow:  6px  6px 0px 0px var(--color-shadow); }
+.active\:shadow-\[3px_3px_0px_0px_\#1a1c1c\]:active  { box-shadow:  3px  3px 0px 0px var(--color-shadow); }
+
+/* ================================================================
+   BRUTALIST UTILITIES — all use CSS variables
+   ================================================================ */
+
 .brutal-shadow {
-  box-shadow: 8px 8px 0px 0px #1a1c1c;
+  box-shadow: 8px 8px 0px 0px var(--color-shadow);
   transition: all 0.15s ease-out;
 }
-
 .brutal-shadow:hover {
   transform: translate(2px, 2px);
-  box-shadow: 6px 6px 0px 0px #1a1c1c;
+  box-shadow: 6px 6px 0px 0px var(--color-shadow);
 }
-
 .brutal-shadow:active {
   transform: translate(8px, 8px);
-  box-shadow: 0px 0px 0px 0px #1a1c1c;
+  box-shadow: 0px 0px 0px 0px var(--color-shadow);
 }
 
-.brutal-shadow-sm {
-  box-shadow: 4px 4px 0px 0px #1a1c1c;
-}
-
-.brutal-border {
-  border: 4px solid #1a1c1c;
-}
-
-.brutal-border-sm {
-  border: 2px solid #1a1c1c;
-}
-
-.brutal-border-heavy {
-  border: 4px solid #1a1c1c;
-}
-
-/* Custom Button Hover/Active logic based on style guidelines */
-.btn-brutal {
-  transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
-}
-.btn-brutal:hover {
+.brutal-shadow-sm { box-shadow: 4px 4px 0px 0px var(--color-shadow); }
+.brutal-shadow-sm:active {
   transform: translate(2px, 2px);
-  box-shadow: 6px 6px 0px 0px #1a1c1c;
-}
-.btn-brutal:active {
-  transform: translate(8px, 8px);
-  box-shadow: 0px 0px 0px 0px #1a1c1c;
+  box-shadow: 2px 2px 0px 0px var(--color-shadow);
 }
 
-/* Input Focus */
+.brutal-border        { border: 4px solid var(--color-border); }
+.brutal-border-sm     { border: 2px solid var(--color-border); }
+.brutal-border-heavy  { border: 4px solid var(--color-border); }
+
+.btn-brutal { transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out; }
+.btn-brutal:hover  { transform: translate(2px, 2px);  box-shadow: 6px 6px 0px 0px var(--color-shadow); }
+.btn-brutal:active { transform: translate(8px, 8px);  box-shadow: 0px 0px 0px 0px var(--color-shadow); }
+
 .input-brutal:focus {
   border-width: 4px;
   outline: none;
-  border-color: #fde400; /* Primary Yellow */
+  border-color: var(--color-primary);
+}
+
+/* ================================================================
+   HERO GRID — uses CSS variable so it responds to theme changes
+   ================================================================ */
+
+.hero-grid {
+  background-image:
+    linear-gradient(var(--color-grid) 2px, transparent 2px),
+    linear-gradient(90deg, var(--color-grid) 2px, transparent 2px);
+  background-size: 64px 64px;
 }

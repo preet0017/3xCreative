@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import ThemeSelector from './ThemeSelector';
 
 function Navbar({ currentRoute, navigateTo }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -46,19 +47,27 @@ function Navbar({ currentRoute, navigateTo }) {
           })}
         </nav>
 
-        <button
-          onClick={() => handleNav('contact')}
-          className="font-label-bold text-label-bold uppercase bg-primary-container text-on-background brutal-border brutal-shadow px-lg py-sm hidden md:block active:translate-x-[2px] active:translate-y-[2px] active:shadow-[6px_6px_0px_0px_#1a1c1c] transition-all cursor-pointer"
-        >
-          Hire Us
-        </button>
+        {/* Desktop right section: ThemeSelector + Hire Us */}
+        <div className="hidden md:flex items-center gap-md">
+          <ThemeSelector />
+          <button
+            onClick={() => handleNav('contact')}
+            className="font-label-bold text-label-bold uppercase bg-primary-container text-on-background brutal-border brutal-shadow px-lg py-sm active:translate-x-[2px] active:translate-y-[2px] transition-all cursor-pointer"
+          >
+            Hire Us
+          </button>
+        </div>
 
-        <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden text-on-background brutal-border-sm p-1 bg-primary-container brutal-shadow-sm active:translate-x-[1px] active:translate-y-[1px] active:shadow-[3px_3px_0px_0px_#1a1c1c] transition-all cursor-pointer"
-        >
-          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        {/* Mobile: ThemeSelector + Hamburger */}
+        <div className="md:hidden flex items-center gap-sm">
+          <ThemeSelector />
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="text-on-background brutal-border-sm p-1 bg-primary-container brutal-shadow-sm active:translate-x-[1px] active:translate-y-[1px] transition-all cursor-pointer"
+          >
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {mobileMenuOpen && (
@@ -79,7 +88,7 @@ function Navbar({ currentRoute, navigateTo }) {
           })}
           <button
             onClick={() => handleNav('contact')}
-            className="w-full bg-primary-container text-on-background font-headline-md text-headline-md uppercase py-md brutal-border brutal-shadow active:translate-x-[2px] active:translate-y-[2px] active:shadow-[6px_6px_0px_0px_#1a1c1c] transition-all cursor-pointer"
+            className="w-full bg-primary-container text-on-background font-headline-md text-headline-md uppercase py-md brutal-border brutal-shadow active:translate-x-[2px] active:translate-y-[2px] transition-all cursor-pointer"
           >
             Hire Us
           </button>
