@@ -8,7 +8,7 @@ function App() {
   const [activeSection, setActiveSection] = useState('hero');
 
   useEffect(() => {
-    const sectionIds = ['hero', 'services', 'trusted-by', 'work', 'stack', 'faq', 'about', 'contact'];
+    const sectionIds = ['hero', 'services', 'trusted-by', 'stack', 'faq', 'about', 'contact'];
     const sections = sectionIds
       .map((id) => document.getElementById(id))
       .filter(Boolean);
@@ -37,7 +37,7 @@ function App() {
       home: 'hero',
       services: 'services',
       'trusted-by': 'trusted-by',
-      work: 'work',
+      //work: 'work',
       stack: 'stack',
       faq: 'faq',
       about: 'about',

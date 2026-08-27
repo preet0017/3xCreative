@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import ThemeSelector from './ThemeSelector';
+import ThemeToggle from './ThemeToggle';
 
 function Navbar({ currentRoute, navigateTo }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems = [
     { label: 'Services', route: 'services' },
-    { label: 'Work', route: 'work' },
+    // { label: 'Work', route: 'work' },
     // { label: 'Tech Stack', route: 'stack' },
     { label: 'About', route: 'about' },
     { label: 'Contact', route: 'contact' }
@@ -47,20 +47,20 @@ function Navbar({ currentRoute, navigateTo }) {
           })}
         </nav>
 
-        {/* Desktop right section: ThemeSelector + Hire Us */}
+        {/* Desktop right section: ThemeToggle + Hire Us */}
         <div className="hidden md:flex items-center gap-md">
-          <ThemeSelector />
+          <ThemeToggle />
           <button
             onClick={() => handleNav('contact')}
-            className="font-label-bold text-label-bold uppercase bg-primary-container text-on-background brutal-border brutal-shadow px-lg py-sm active:translate-x-[2px] active:translate-y-[2px] transition-all cursor-pointer"
+            className="font-label-bold text-label-bold uppercase bg-primary-container text-on-primary brutal-border brutal-shadow px-lg py-sm active:translate-x-[2px] active:translate-y-[2px] transition-all cursor-pointer"
           >
             Hire Us
           </button>
         </div>
 
-        {/* Mobile: ThemeSelector + Hamburger */}
+        {/* Mobile: ThemeToggle + Hamburger */}
         <div className="md:hidden flex items-center gap-sm">
-          <ThemeSelector />
+          <ThemeToggle />
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="text-on-background brutal-border-sm p-1 bg-primary-container brutal-shadow-sm active:translate-x-[1px] active:translate-y-[1px] transition-all cursor-pointer"
@@ -88,7 +88,7 @@ function Navbar({ currentRoute, navigateTo }) {
           })}
           <button
             onClick={() => handleNav('contact')}
-            className="w-full bg-primary-container text-on-background font-headline-md text-headline-md uppercase py-md brutal-border brutal-shadow active:translate-x-[2px] active:translate-y-[2px] transition-all cursor-pointer"
+            className="w-full bg-primary-container text-on-primary font-headline-md text-headline-md uppercase py-md brutal-border brutal-shadow active:translate-x-[2px] active:translate-y-[2px] transition-all cursor-pointer"
           >
             Hire Us
           </button>

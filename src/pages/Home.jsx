@@ -177,7 +177,7 @@ function Home({ navigateTo }) {
         </div>
       </motion.section>
 
-      <motion.section id="work" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.15 }}>
+      {/*<motion.section id="work" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.15 }}>
         <WorkPage navigateTo={navigateTo} />
       </motion.section>
 

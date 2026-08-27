@@ -6,161 +6,59 @@
    THEME CSS VARIABLES — one block per theme, set on <html>
    ================================================================ */
 
+/* ── LIGHT MODE (Blue / White — Bytefaze Light) ─────────────────── */
 :root,
-[data-theme="original"] {
-  --color-background:        #f9f9f9;
-  --color-surface:           #f9f9f9;
-  --color-surface-lowest:    #ffffff;
-  --color-surface-low:       #f4f3f3;
-  --color-surface-container: #eeeeee;
-  --color-surface-high:      #e8e8e8;
-  --color-surface-highest:   #e2e2e2;
-  --color-surface-bright:    #f9f9f9;
-  --color-surface-variant:   #e2e2e2;
-  --color-surface-tint:      #6a5f00;
-  --color-text:              #1a1c1c;
-  --color-text-variant:      #4b4731;
-  --color-text-secondary:    #5e5e5e;
-  --color-primary:           #6a5f00;
-  --color-primary-container: #ffe600;
-  --color-primary-fixed:     #fde400;
-  --color-primary-fixed-dim: #dec800;
-  --color-on-primary:        #1a1c1c;
-  --color-on-primary-container: #726600;
-  --color-secondary:         #5e5e5e;
-  --color-border:            #1a1c1c;
-  --color-shadow:            #1a1c1c;
-  --color-grid:              #1a1c1c;
-}
-
 [data-theme="light"] {
   --color-background:        #f0f4ff;
-  --color-surface:           #f8faff;
+  --color-surface:           #ffffff;
   --color-surface-lowest:    #ffffff;
   --color-surface-low:       #eef2ff;
-  --color-surface-container: #e0e8ff;
-  --color-surface-high:      #d5e0ff;
-  --color-surface-highest:   #c8d8ff;
-  --color-surface-bright:    #f8faff;
+  --color-surface-container: #dce6ff;
+  --color-surface-high:      #c7d8ff;
+  --color-surface-highest:   #b3caff;
+  --color-surface-bright:    #ffffff;
   --color-surface-variant:   #c7d8ff;
   --color-surface-tint:      #1d4ed8;
   --color-text:              #0f172a;
-  --color-text-variant:      #334155;
-  --color-text-secondary:    #475569;
+  --color-text-variant:      #1e3a8a;
+  --color-text-secondary:    #334155;
   --color-primary:           #1d4ed8;
   --color-primary-container: #2563eb;
   --color-primary-fixed:     #3b82f6;
   --color-primary-fixed-dim: #1d4ed8;
   --color-on-primary:        #ffffff;
   --color-on-primary-container: #1e3a8a;
-  --color-secondary:         #475569;
+  --color-secondary:         #334155;
   --color-border:            #0f172a;
   --color-shadow:            #0f172a;
-  --color-grid:              #0f172a;
+  --color-grid:              #1d4ed8;
 }
 
-[data-theme="aqua"] {
-  --color-background:        #ecfeff;
-  --color-surface:           #f0fffe;
-  --color-surface-lowest:    #ffffff;
-  --color-surface-low:       #e0f7f8;
-  --color-surface-container: #cef2f4;
-  --color-surface-high:      #bdebed;
-  --color-surface-highest:   #ace4e7;
-  --color-surface-bright:    #f0fffe;
-  --color-surface-variant:   #a5f3fc;
-  --color-surface-tint:      #0891b2;
-  --color-text:              #0c2a2a;
-  --color-text-variant:      #164444;
-  --color-text-secondary:    #285555;
-  --color-primary:           #0e7490;
-  --color-primary-container: #0891b2;
-  --color-primary-fixed:     #06b6d4;
-  --color-primary-fixed-dim: #0e7490;
+/* ── DARK MODE (Deep Navy / Blue — Bytefaze Dark) ───────────────── */
+[data-theme="dark"] {
+  --color-background:        #060d1f;
+  --color-surface:           #0d1b3e;
+  --color-surface-lowest:    #0a1628;
+  --color-surface-low:       #0f1e40;
+  --color-surface-container: #112044;
+  --color-surface-high:      #172850;
+  --color-surface-highest:   #1e3060;
+  --color-surface-bright:    #1a2a5e;
+  --color-surface-variant:   #1e3060;
+  --color-surface-tint:      #3b82f6;
+  --color-text:              #e2e8f0;
+  --color-text-variant:      #bfdbfe;
+  --color-text-secondary:    #93c5fd;
+  --color-primary:           #3b82f6;
+  --color-primary-container: #1e40af;
+  --color-primary-fixed:     #60a5fa;
+  --color-primary-fixed-dim: #3b82f6;
   --color-on-primary:        #ffffff;
-  --color-on-primary-container: #164e63;
-  --color-secondary:         #285555;
-  --color-border:            #0c2a2a;
-  --color-shadow:            #0c2a2a;
-  --color-grid:              #0c2a2a;
-}
-
-[data-theme="fire"] {
-  --color-background:        #fff7f5;
-  --color-surface:           #fff9f8;
-  --color-surface-lowest:    #ffffff;
-  --color-surface-low:       #ffeeea;
-  --color-surface-container: #ffe4de;
-  --color-surface-high:      #ffd9d1;
-  --color-surface-highest:   #ffcec4;
-  --color-surface-bright:    #fff9f8;
-  --color-surface-variant:   #fecaca;
-  --color-surface-tint:      #dc2626;
-  --color-text:              #1a0505;
-  --color-text-variant:      #4a1010;
-  --color-text-secondary:    #6b2020;
-  --color-primary:           #b91c1c;
-  --color-primary-container: #dc2626;
-  --color-primary-fixed:     #ef4444;
-  --color-primary-fixed-dim: #b91c1c;
-  --color-on-primary:        #ffffff;
-  --color-on-primary-container: #7f1d1d;
-  --color-secondary:         #6b2020;
-  --color-border:            #1a0505;
-  --color-shadow:            #1a0505;
-  --color-grid:              #1a0505;
-}
-
-[data-theme="cyber"] {
-  --color-background:        #050505;
-  --color-surface:           #111111;
-  --color-surface-lowest:    #050505;
-  --color-surface-low:       #0a0a0a;
-  --color-surface-container: #0f0f0f;
-  --color-surface-high:      #141414;
-  --color-surface-highest:   #191919;
-  --color-surface-bright:    #111111;
-  --color-surface-variant:   #606060;
-  --color-surface-tint:      #00ffff;
-  --color-text:              #ffffff;
-  --color-text-variant:      #a0a0a0;
-  --color-text-secondary:    #7c3aed;
-  --color-primary:           #00ffff;
-  --color-primary-container: #003333;
-  --color-primary-fixed:     #00ffff;
-  --color-primary-fixed-dim: #00d4d4;
-  --color-on-primary:        #050505;
-  --color-on-primary-container: #00ffff;
-  --color-secondary:         #7c3aed;
-  --color-border:            #00ffff;
-  --color-shadow:            #00ffff;
-  --color-grid:              #00ffff;
-}
-
-[data-theme="nature"] {
-  --color-background:        #f0fdf4;
-  --color-surface:           #f5fff7;
-  --color-surface-lowest:    #ffffff;
-  --color-surface-low:       #e8fbed;
-  --color-surface-container: #d8f7de;
-  --color-surface-high:      #c8f2cf;
-  --color-surface-highest:   #b8ecc0;
-  --color-surface-bright:    #f5fff7;
-  --color-surface-variant:   #a7f3d0;
-  --color-surface-tint:      #15803d;
-  --color-text:              #0a1f0a;
-  --color-text-variant:      #14401a;
-  --color-text-secondary:    #1e5e26;
-  --color-primary:           #15803d;
-  --color-primary-container: #16a34a;
-  --color-primary-fixed:     #22c55e;
-  --color-primary-fixed-dim: #15803d;
-  --color-on-primary:        #ffffff;
-  --color-on-primary-container: #052e16;
-  --color-secondary:         #1e5e26;
-  --color-border:            #0a1f0a;
-  --color-shadow:            #0a1f0a;
-  --color-grid:              #0a1f0a;
+  --color-on-primary-container: #bfdbfe;
+  --color-secondary:         #93c5fd;
+  --color-border:            #e2e8f0;
+  --color-shadow:            #3b82f6;
+  --color-grid:              #1e40af;
 }
 
 /* ================================================================
@@ -173,7 +71,7 @@
   section[id] { scroll-margin-top: 80px; }
   ::selection {
     background-color: var(--color-primary-fixed);
-    color: var(--color-text);
+    color: var(--color-on-primary);
   }
 }
 
@@ -242,28 +140,34 @@
 .border-on-surface    { border-color: var(--color-text); }
 
 /* ================================================================
-   CYBER DARK THEME — TARGETED CORRECTIONS
-   Cyber is the only dark-background theme. Several "inverted" 
-   patterns (bg-on-background used as dark bg in light themes) 
-   break when --color-text = #ffffff.
+   DARK THEME — TARGETED CORRECTIONS
+   Dark is the only dark-background theme. Several "inverted"
+   patterns (bg-on-background used as dark bg in light themes)
+   need correction when --color-text = light text color.
    ================================================================ */
 
-/* Force all bg-on-background elements to true black in Cyber */
-[data-theme="cyber"] .bg-on-background,
-[data-theme="cyber"] .hover\:bg-on-background:hover { background-color: #000000; }
+/* bg-on-background uses --color-text; in dark mode text is light,
+   so we use a deep navy to keep it readable as a dark "block" */
+[data-theme="dark"] .bg-on-background,
+[data-theme="dark"] .hover\:bg-on-background:hover { background-color: #0a1628; }
 
-/* Allow service card icon header hover to keep light bg */
-[data-theme="cyber"] .group:hover .group-hover\:bg-on-background { background-color: #1a1a1a; }
+/* Service card icon area hover: stay readable on dark backgrounds */
+[data-theme="dark"] .group:hover .group-hover\:bg-on-background { background-color: #112044; }
 
-/* Icon inside hovered service card: show as cyan (readable on dark bg) */
-[data-theme="cyber"] .group:hover .group-hover\:text-primary-container { color: var(--color-primary); }
+/* Icon inside hovered service card */
+[data-theme="dark"] .group:hover .group-hover\:text-primary-container { color: var(--color-primary-fixed); }
 
-/* "Light text on dark inverted backgrounds" pattern */
-[data-theme="cyber"] .text-surface-bright        { color: #c0c0c0; }
-[data-theme="cyber"] .text-surface-container-lowest { color: #e0e0e0; }
+/* "Light text on dark inverted backgrounds" — e.g. footer, tags */
+[data-theme="dark"] .text-surface-bright        { color: var(--color-text); }
+[data-theme="dark"] .text-surface-container-lowest { color: var(--color-text); }
 
-/* Footer link muted text on black bg */
-[data-theme="cyber"] .text-surface-variant       { color: #707070; }
+/* Footer link muted text */
+[data-theme="dark"] .text-surface-variant       { color: var(--color-text-secondary); }
+
+/* In dark mode, the "dark block" bg-on-background / text-surface-container-lowest
+   pattern (dark bg + light text on tags/badges) should invert to navy + light text */
+[data-theme="dark"] .bg-on-background           { background-color: #0a1628; }
+[data-theme="dark"] .text-surface-container-lowest { color: var(--color-text); }
 
 /* ================================================================
    HARDCODED ARBITRARY TAILWIND SHADOW OVERRIDES
