@@ -63,7 +63,7 @@ function Navbar({ currentRoute, navigateTo }) {
           <ThemeToggle />
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="text-on-background brutal-border-sm p-1 bg-primary-container brutal-shadow-sm active:translate-x-[1px] active:translate-y-[1px] transition-all cursor-pointer"
+            className="text-white brutal-border-sm p-1 bg-primary-container brutal-shadow-sm active:translate-x-[1px] active:translate-y-[1px] transition-all cursor-pointer"
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>

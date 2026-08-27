@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTheme } from '../context/ThemeContext';
 import { motion } from 'framer-motion';
 import {
   MonitorSmartphone,
@@ -14,6 +15,10 @@ import ContactPage from './Contact';
 import StackPage from './Stack';
 
 function Home({ navigateTo }) {
+  const { theme } = useTheme();
+  const heroSvg = theme === 'dark-blue-golden'
+    ? '/svgs/svg_golden.svg'
+    : '/svgs/svg_dark-blue.svg';
   const [openFaq, setOpenFaq] = useState(null);
 
   const services = [
@@ -81,7 +86,7 @@ function Home({ navigateTo }) {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4 }}
-        className="bg-primary-container brutal-border-sm border-b-4 w-full relative overflow-hidden"
+        className="bg-background border-b-4 border-on-background w-full relative overflow-hidden"
       >
         <div className="absolute inset-0 opacity-10 pointer-events-none hero-grid"></div>
         <div className="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop py-xl md:py-[120px] min-h-[calc(100vh-80px)] relative z-10 grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
@@ -95,24 +100,25 @@ function Home({ navigateTo }) {
             <div className="flex flex-wrap gap-md mt-sm">
               <button
                 onClick={() => navigateTo('contact')}
-                className="font-label-bold text-label-bold uppercase bg-surface-container-lowest text-on-background brutal-border brutal-shadow px-xl py-md active:translate-x-[2px] active:translate-y-[2px] active:shadow-[6px_6px_0px_0px_#1a1c1c] transition-all cursor-pointer"
+                className="font-label-bold text-label-bold uppercase bg-primary-container text-on-primary brutal-border brutal-shadow px-xl py-md active:translate-x-[2px] active:translate-y-[2px] active:shadow-[6px_6px_0px_0px_#1a1c1c] transition-all cursor-pointer"
               >
                 Hire Us
               </button>
-              <button
+              {/* <button
                 onClick={() => navigateTo('services')}
                 className="font-label-bold text-label-bold uppercase bg-on-background text-surface-container-lowest brutal-border brutal-shadow px-xl py-md hover:bg-surface-variant hover:text-on-background transition-all active:translate-x-[2px] active:translate-y-[2px] active:shadow-[6px_6px_0px_0px_#1a1c1c] cursor-pointer"
               >
                 See the Stack
-              </button>
+              </button> */}
             </div>
           </div>
           <div className="md:col-span-4 hidden md:block">
             <div className="w-full aspect-square bg-surface-container-lowest brutal-border brutal-shadow relative overflow-hidden">
               <img
-                className="w-full h-full object-cover"
+                key={heroSvg}
+                className="w-full h-full object-contain p-md transition-opacity duration-300"
                 alt="Neo-brutalist 3D server architecture"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzkb2Emmt6OoWT_h2VCnFH3B7dOVaWMO5AGvvgquQOXVXIC7ProCvaPyAjc87hDXCdiiUtAJJBg8kG2WdsMMOZQ5ke3sMl6OW05ebzX7QOLWJk7WByzj3zPRXFNQhvDDhgMZrm9aShgpZQ3n1zCATe9wEPuAr6S2WUudETfJgUNq4jl2HWBI43aKPCL8IqbNcPEQqLvLhJtpceXTHahoID4U5VZ1jjd6hmile4dDfzE-xsGObehcdHcw"
+                src={heroSvg}
               />
             </div>
           </div>

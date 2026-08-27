@@ -3,62 +3,90 @@
 @tailwind utilities;
 
 /* ================================================================
-   THEME CSS VARIABLES — one block per theme, set on <html>
+   THEME CSS VARIABLES
+   Two themes: "white-golden" and "dark-blue-golden"
+   Applied on <html data-theme="...">
    ================================================================ */
 
-/* ── LIGHT MODE (Blue / White — Bytefaze Light) ─────────────────── */
+/* ── WHITE + GOLDEN ─────────────────────────────────────────────── */
 :root,
-[data-theme="light"] {
-  --color-background:        #f0f4ff;
-  --color-surface:           #ffffff;
-  --color-surface-lowest:    #ffffff;
-  --color-surface-low:       #eef2ff;
-  --color-surface-container: #dce6ff;
-  --color-surface-high:      #c7d8ff;
-  --color-surface-highest:   #b3caff;
-  --color-surface-bright:    #ffffff;
-  --color-surface-variant:   #c7d8ff;
-  --color-surface-tint:      #1d4ed8;
-  --color-text:              #0f172a;
-  --color-text-variant:      #1e3a8a;
-  --color-text-secondary:    #334155;
-  --color-primary:           #1d4ed8;
-  --color-primary-container: #2563eb;
-  --color-primary-fixed:     #3b82f6;
-  --color-primary-fixed-dim: #1d4ed8;
-  --color-on-primary:        #ffffff;
-  --color-on-primary-container: #1e3a8a;
-  --color-secondary:         #334155;
-  --color-border:            #0f172a;
-  --color-shadow:            #0f172a;
-  --color-grid:              #1d4ed8;
+[data-theme="white-golden"] {
+  /* ── Page Backgrounds ── */
+  --color-background:           #F7F7F5;   /* Main page bg — dominant warm off-white */
+  --color-surface:              #FAFAF9;   /* Soft surface: cards, panels, dropdowns */
+  --color-surface-lowest:       #FFFFFF;   /* Lightest: input fields, card interiors */
+  --color-surface-low:          #F4F4F0;
+  --color-surface-container:    #ECEEE9;   /* Section alternate bg (Trusted By, etc.) */
+  --color-surface-high:         #E2E4E2;   /* --graphic: decorative shapes, separators */
+  --color-surface-highest:      #D9D9D5;   /* --border value reference */
+  --color-surface-bright:       #FAFAF9;
+  --color-surface-variant:      #E2E4E2;   /* Subtle graphic/separator surfaces */
+  --color-surface-tint:         #B09225;   /* Gold tint (labels, small accents) */
+
+  /* ── Typography ── */
+  --color-text:                 #07101F;   /* PRIMARY: headings, nav, important text */
+  --color-text-variant:         #07101F;
+  --color-text-secondary:       #737985;   /* SECONDARY: body copy, descriptions */
+
+  /* ── Gold Accent System ── */
+  --color-primary:              #B09225;   /* PRIMARY GOLD: highlighted words, icons */
+  --color-primary-container:    #B09225;   /* GOLD: CTA button background (matches dark theme) */
+  --color-primary-fixed:        #B09225;   /* GOLD: wordmarks, decorative labels */
+  --color-primary-fixed-dim:    #89731D;   /* DARK GOLD: hover states on gold elements */
+  --color-on-primary:           #07101F;   /* Deep navy text ON gold CTA button */
+  --color-on-primary-container: #07101F;   /* Deep navy text ON gold CTA button */
+
+  /* ── Secondary/Muted ── */
+  --color-secondary:            #606672;   /* MUTED: micro-labels, footer descriptions */
+
+  /* ── Inverted block system (dark elements on light page) ── */
+  --color-on-background:        #0B1427;   /* Dark block bg: tags, secondary buttons, footer */
+  --color-on-surface:           #07101F;   /* Synonym for primary text */
+
+  /* ── Structural colors ── */
+  --color-border:               #D9D9D5;   /* Subtle warm-gray borders */
+  --color-shadow:               #07101F;   /* Strong dark navy brutalist shadow */
+  --color-grid:                 #07101F;   /* Hero grid (rendered at opacity-10 → subtle) */
 }
 
-/* ── DARK MODE (Deep Navy / Blue — Bytefaze Dark) ───────────────── */
-[data-theme="dark"] {
-  --color-background:        #060d1f;
-  --color-surface:           #0d1b3e;
-  --color-surface-lowest:    #0a1628;
-  --color-surface-low:       #0f1e40;
-  --color-surface-container: #112044;
-  --color-surface-high:      #172850;
-  --color-surface-highest:   #1e3060;
-  --color-surface-bright:    #1a2a5e;
-  --color-surface-variant:   #1e3060;
-  --color-surface-tint:      #3b82f6;
-  --color-text:              #e2e8f0;
-  --color-text-variant:      #bfdbfe;
-  --color-text-secondary:    #93c5fd;
-  --color-primary:           #3b82f6;
-  --color-primary-container: #1e40af;
-  --color-primary-fixed:     #60a5fa;
-  --color-primary-fixed-dim: #3b82f6;
-  --color-on-primary:        #ffffff;
-  --color-on-primary-container: #bfdbfe;
-  --color-secondary:         #93c5fd;
-  --color-border:            #e2e8f0;
-  --color-shadow:            #3b82f6;
-  --color-grid:              #1e40af;
+/* ── DARK BLUE + GOLDEN ─────────────────────────────────────────── */
+[data-theme="dark-blue-golden"] {
+  /* ── Page Backgrounds ── */
+  --color-background:           #0B141B;   /* Main page bg — dominant deep navy */
+  --color-surface:              #161D21;   /* Soft surface: cards, panels, dropdowns */
+  --color-surface-lowest:       #161D21;   /* Card/form interiors */
+  --color-surface-low:          #1A2126;
+  --color-surface-container:    #1E2428;   /* Section alternate bg */
+  --color-surface-high:         #262C2F;   /* --graphic: decorative shapes */
+  --color-surface-highest:      #353C43;   /* --border value reference */
+  --color-surface-bright:       #1E2428;
+  --color-surface-variant:      #262C2F;   /* Graphic/separator surfaces */
+  --color-surface-tint:         #D7B23E;   /* Gold tint */
+
+  /* ── Typography ── */
+  --color-text:                 #FBFDFD;   /* PRIMARY: headings, important text */
+  --color-text-variant:         #E7EAEC;
+  --color-text-secondary:       #E7EAEC;   /* SECONDARY: body copy, descriptions */
+
+  /* ── Gold Accent System ── */
+  --color-primary:              #D7B23E;   /* PRIMARY GOLD: highlighted words, icons */
+  --color-primary-container:    #D7B23E;   /* GOLD: CTA button bg (inverted from light!) */
+  --color-primary-fixed:        #D7B23E;   /* GOLD: wordmarks, decorative labels */
+  --color-primary-fixed-dim:    #B19941;   /* DARK GOLD: hover states */
+  --color-on-primary:           #0B141B;   /* Dark text ON gold CTA button */
+  --color-on-primary-container: #0B141B;   /* Dark text ON gold CTA button */
+
+  /* ── Secondary/Muted ── */
+  --color-secondary:            #93979B;   /* MUTED: micro-labels, footer descriptions */
+
+  /* ── Inverted block system (nominally gold; secondary uses corrected below) ── */
+  --color-on-background:        #D7B23E;   /* Nominal gold — secondary uses overridden */
+  --color-on-surface:           #FBFDFD;   /* Synonym for primary text */
+
+  /* ── Structural colors ── */
+  --color-border:               #353C43;   /* Subtle dark-blue borders */
+  --color-shadow:               #353C43;   /* Subtle dark shadow */
+  --color-grid:                 #FBFDFD;   /* Hero grid (at opacity-10 → subtle white) */
 }
 
 /* ================================================================
@@ -70,52 +98,52 @@
   body { background-color: var(--color-background); color: var(--color-text); }
   section[id] { scroll-margin-top: 80px; }
   ::selection {
-    background-color: var(--color-primary-fixed);
+    background-color: var(--color-primary);
     color: var(--color-on-primary);
   }
 }
 
 /* ================================================================
    TAILWIND COLOR OVERRIDES
-   Placed after @tailwind utilities so they win the cascade.
-   Specificity is equal (1 class) but these declarations come later.
+   These come after @tailwind utilities so they win the cascade.
    ================================================================ */
 
-/* Backgrounds */
-.bg-background               { background-color: var(--color-background); }
-.bg-surface                  { background-color: var(--color-surface); }
-.bg-surface-container-lowest { background-color: var(--color-surface-lowest); }
-.bg-surface-container-low    { background-color: var(--color-surface-low); }
-.bg-surface-container        { background-color: var(--color-surface-container); }
-.bg-surface-container-high   { background-color: var(--color-surface-high); }
-.bg-surface-container-highest{ background-color: var(--color-surface-highest); }
-.bg-surface-bright           { background-color: var(--color-surface-bright); }
-.bg-surface-variant          { background-color: var(--color-surface-variant); }
-.bg-primary-container        { background-color: var(--color-primary-container); }
-.bg-primary-fixed            { background-color: var(--color-primary-fixed); }
-.bg-primary                  { background-color: var(--color-primary); }
-.bg-on-background            { background-color: var(--color-text); }
-.bg-on-surface               { background-color: var(--color-text); }
+/* ── Backgrounds ── */
+.bg-background                { background-color: var(--color-background); }
+.bg-surface                   { background-color: var(--color-surface); }
+.bg-surface-container-lowest  { background-color: var(--color-surface-lowest); }
+.bg-surface-container-low     { background-color: var(--color-surface-low); }
+.bg-surface-container         { background-color: var(--color-surface-container); }
+.bg-surface-container-high    { background-color: var(--color-surface-high); }
+.bg-surface-container-highest { background-color: var(--color-surface-highest); }
+.bg-surface-bright            { background-color: var(--color-surface-bright); }
+.bg-surface-variant           { background-color: var(--color-surface-variant); }
+.bg-primary-container         { background-color: var(--color-primary-container); }
+.bg-primary-fixed             { background-color: var(--color-primary-fixed); }
+.bg-primary                   { background-color: var(--color-primary); }
+.bg-on-background             { background-color: var(--color-on-background); }
+.bg-on-surface                { background-color: var(--color-on-surface); }
 
-/* Hover backgrounds */
-.hover\:bg-surface-variant:hover   { background-color: var(--color-surface-variant); }
-.hover\:bg-surface-container:hover { background-color: var(--color-surface-container); }
-.hover\:bg-primary-fixed:hover     { background-color: var(--color-primary-fixed); }
-.hover\:bg-on-background:hover     { background-color: var(--color-text); }
+/* ── Hover Backgrounds ── */
+.hover\:bg-surface-variant:hover       { background-color: var(--color-surface-variant); }
+.hover\:bg-surface-container:hover     { background-color: var(--color-surface-container); }
+.hover\:bg-primary-fixed:hover         { background-color: var(--color-primary-fixed); }
+.hover\:bg-on-background:hover         { background-color: var(--color-on-background); }
+.hover\:bg-primary-container:hover     { background-color: var(--color-primary-container); }
 
-/* Group hover backgrounds */
-.group:hover .group-hover\:bg-on-background { background-color: var(--color-text); }
+/* ── Group Hover Backgrounds ── */
+.group:hover .group-hover\:bg-on-background { background-color: var(--color-on-background); }
 
-/* Text */
+/* ── Text Colors ── */
 .text-on-background            { color: var(--color-text); }
 .text-on-surface               { color: var(--color-text); }
 .text-primary                  { color: var(--color-primary); }
 .text-primary-container        { color: var(--color-primary-container); }
 .text-primary-fixed            { color: var(--color-primary-fixed); }
-.text-on-surface-variant       { color: var(--color-text-variant); }
+.text-on-surface-variant       { color: var(--color-text-secondary); }
 .text-secondary                { color: var(--color-secondary); }
 .text-tertiary                 { color: var(--color-secondary); }
-.text-surface-variant          { color: var(--color-surface-variant); }
+.text-surface-variant          { color: var(--color-secondary); }
 .text-surface-bright           { color: var(--color-surface-bright); }
 .text-surface-tint             { color: var(--color-surface-tint); }
 .text-surface-container-lowest { color: var(--color-surface-lowest); }
@@ -123,15 +151,17 @@
 .text-on-primary-container     { color: var(--color-on-primary-container); }
 .text-inverse-on-surface       { color: var(--color-surface-bright); }
 
-/* Hover text */
-.hover\:text-primary:hover       { color: var(--color-primary); }
-.hover\:text-primary-fixed:hover { color: var(--color-primary-fixed); }
-.hover\:text-on-background:hover { color: var(--color-text); }
+/* ── Hover Text ── */
+.hover\:text-primary:hover               { color: var(--color-primary); }
+.hover\:text-primary-fixed:hover         { color: var(--color-primary-fixed); }
+.hover\:text-on-background:hover         { color: var(--color-text); }
+.hover\:text-on-primary:hover            { color: var(--color-on-primary); }
+.hover\:text-on-primary-container:hover  { color: var(--color-on-primary-container); }
 
-/* Group hover text */
+/* ── Group Hover Text ── */
 .group:hover .group-hover\:text-primary-container { color: var(--color-primary-container); }
 
-/* Borders */
+/* ── Borders ── */
 .border-on-background { border-color: var(--color-text); }
 .border-primary       { border-color: var(--color-primary); }
 .border-primary-fixed { border-color: var(--color-primary-fixed); }
@@ -140,47 +170,52 @@
 .border-on-surface    { border-color: var(--color-text); }
 
 /* ================================================================
-   DARK THEME — TARGETED CORRECTIONS
-   Dark is the only dark-background theme. Several "inverted"
-   patterns (bg-on-background used as dark bg in light themes)
-   need correction when --color-text = light text color.
+   DARK-BLUE-GOLDEN — TARGETED CORRECTIONS
+   --color-on-background = #D7B23E (gold) by default.
+   Secondary inverted elements (service tags, secondary buttons)
+   must use a dark surface, not gold. Only primary CTAs get gold
+   via bg-primary-container.
    ================================================================ */
 
-/* bg-on-background uses --color-text; in dark mode text is light,
-   so we use a deep navy to keep it readable as a dark "block" */
-[data-theme="dark"] .bg-on-background,
-[data-theme="dark"] .hover\:bg-on-background:hover { background-color: #0a1628; }
+[data-theme="dark-blue-golden"] .bg-on-background              { background-color: #1E2428; }
+[data-theme="dark-blue-golden"] .hover\:bg-on-background:hover { background-color: #262C2F; }
+[data-theme="dark-blue-golden"] .group:hover .group-hover\:bg-on-background { background-color: #262C2F; }
 
-/* Service card icon area hover: stay readable on dark backgrounds */
-[data-theme="dark"] .group:hover .group-hover\:bg-on-background { background-color: #112044; }
+/* Light text on dark inverted elements */
+[data-theme="dark-blue-golden"] .text-surface-container-lowest { color: #FBFDFD; }
+[data-theme="dark-blue-golden"] .text-surface-bright           { color: #FBFDFD; }
 
-/* Icon inside hovered service card */
-[data-theme="dark"] .group:hover .group-hover\:text-primary-container { color: var(--color-primary-fixed); }
+/* Secondary text / footer links in dark theme */
+[data-theme="dark-blue-golden"] .text-surface-variant          { color: #93979B; }
 
-/* "Light text on dark inverted backgrounds" — e.g. footer, tags */
-[data-theme="dark"] .text-surface-bright        { color: var(--color-text); }
-[data-theme="dark"] .text-surface-container-lowest { color: var(--color-text); }
-
-/* Footer link muted text */
-[data-theme="dark"] .text-surface-variant       { color: var(--color-text-secondary); }
-
-/* In dark mode, the "dark block" bg-on-background / text-surface-container-lowest
-   pattern (dark bg + light text on tags/badges) should invert to navy + light text */
-[data-theme="dark"] .bg-on-background           { background-color: #0a1628; }
-[data-theme="dark"] .text-surface-container-lowest { color: var(--color-text); }
+/* Service card: icon color on hover */
+[data-theme="dark-blue-golden"] .group:hover .group-hover\:text-primary-container { color: var(--color-primary-fixed); }
 
 /* ================================================================
-   HARDCODED ARBITRARY TAILWIND SHADOW OVERRIDES
-   These class names match what Tailwind JIT generates for
-   arbitrary shadow values used in components. By redefining them
-   after @tailwind utilities with CSS variables, we override the
-   hardcoded #1a1c1c color for all themes.
+   WHITE-GOLDEN — TARGETED CORRECTIONS
+   --color-on-background = #0B1427 (dark navy).
+   Text on those dark elements needs to be light.
+   Footer uses bg-on-background and needs readable text.
    ================================================================ */
 
-.hover\:shadow-\[10px_10px_0px_0px_\#1a1c1c\]:hover  { box-shadow: 10px 10px 0px 0px var(--color-shadow); }
-.hover\:shadow-\[12px_12px_0px_0px_\#1a1c1c\]:hover  { box-shadow: 12px 12px 0px 0px var(--color-shadow); }
-.active\:shadow-\[6px_6px_0px_0px_\#1a1c1c\]:active  { box-shadow:  6px  6px 0px 0px var(--color-shadow); }
-.active\:shadow-\[3px_3px_0px_0px_\#1a1c1c\]:active  { box-shadow:  3px  3px 0px 0px var(--color-shadow); }
+/* Light text on dark inverted blocks in light theme */
+[data-theme="white-golden"] .text-surface-container-lowest { color: #FFFFFF; }
+[data-theme="white-golden"] .text-surface-bright           { color: #F4F4F1; }
+
+/* Footer text on dark navy bg needs sufficient contrast */
+[data-theme="white-golden"] footer .text-surface-variant { color: #A09E98; }
+
+/* Card group-hover bg (service card icon strip) */
+[data-theme="white-golden"] .group:hover .group-hover\:bg-on-background { background-color: #162040; }
+
+/* ================================================================
+   HARDCODED SHADOW OVERRIDES — replace #1a1c1c with CSS variable
+   ================================================================ */
+
+.hover\:shadow-\[10px_10px_0px_0px_\#1a1c1c\]:hover { box-shadow: 10px 10px 0px 0px var(--color-shadow); }
+.hover\:shadow-\[12px_12px_0px_0px_\#1a1c1c\]:hover { box-shadow: 12px 12px 0px 0px var(--color-shadow); }
+.active\:shadow-\[6px_6px_0px_0px_\#1a1c1c\]:active { box-shadow:  6px  6px 0px 0px var(--color-shadow); }
+.active\:shadow-\[3px_3px_0px_0px_\#1a1c1c\]:active { box-shadow:  3px  3px 0px 0px var(--color-shadow); }
 
 /* ================================================================
    BRUTALIST UTILITIES — all use CSS variables
@@ -205,9 +240,9 @@
   box-shadow: 2px 2px 0px 0px var(--color-shadow);
 }
 
-.brutal-border        { border: 4px solid var(--color-border); }
-.brutal-border-sm     { border: 2px solid var(--color-border); }
-.brutal-border-heavy  { border: 4px solid var(--color-border); }
+.brutal-border       { border: 4px solid var(--color-border); }
+.brutal-border-sm    { border: 2px solid var(--color-border); }
+.brutal-border-heavy { border: 4px solid var(--color-border); }
 
 .btn-brutal { transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out; }
 .btn-brutal:hover  { transform: translate(2px, 2px);  box-shadow: 6px 6px 0px 0px var(--color-shadow); }
@@ -220,7 +255,8 @@
 }
 
 /* ================================================================
-   HERO GRID — uses CSS variable so it responds to theme changes
+   HERO GRID — uses CSS variable so it responds to theme changes.
+   The opacity-10 class in JSX keeps it intentionally subtle.
    ================================================================ */
 
 .hero-grid {
@@ -228,4 +264,49 @@
     linear-gradient(var(--color-grid) 2px, transparent 2px),
     linear-gradient(90deg, var(--color-grid) 2px, transparent 2px);
   background-size: 64px 64px;
+}
+
+/* ================================================================
+   THEME TOGGLE DROPDOWN
+   ================================================================ */
+
+.theme-dropdown {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 6px);
+  background-color: var(--color-surface);
+  border: 2px solid var(--color-border);
+  box-shadow: 4px 4px 0px 0px var(--color-shadow);
+  min-width: 204px;
+  display: flex;
+  flex-direction: column;
+  z-index: 60;
+}
+
+.theme-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  color: var(--color-text);
+  font-size: 12px;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: left;
+  width: 100%;
+  transition: background-color 0.12s ease;
+}
+
+.theme-option:hover {
+  background-color: var(--color-surface-container);
+}
+
+.theme-option[aria-selected="true"] {
+  background-color: var(--color-primary-container);
+  color: var(--color-on-primary-container);
 }

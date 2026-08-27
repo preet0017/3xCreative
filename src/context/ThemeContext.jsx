@@ -1,16 +1,16 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
-const THEMES = ['light', 'dark'];
+const THEMES = ['white-golden', 'dark-blue-golden'];
 
 const THEME_LABELS = {
-  light: 'Light Mode',
-  dark:  'Dark Mode',
+  'white-golden':     'White + Golden',
+  'dark-blue-golden': 'Dark Blue + Golden',
 };
 
 const STORAGE_KEY = '3xcreative-theme';
 
 const ThemeContext = createContext({
-  theme: 'light',
+  theme: 'white-golden',
   setTheme: () => {},
   themes: THEMES,
   themeLabels: THEME_LABELS,
@@ -22,7 +22,7 @@ export function ThemeProvider({ children }) {
       const saved = localStorage.getItem(STORAGE_KEY);
       if (saved && THEMES.includes(saved)) return saved;
     } catch { /* ignore */ }
-    return 'light';
+    return 'white-golden';
   });
 
   useEffect(() => {
